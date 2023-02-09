@@ -1,0 +1,26 @@
+spring:
+  #스프링부트에서는 기본적으로 메모리모드를 제공해주기 때문에 별도의 세팅없이 테스트코드가 db랑상관없이 실행이 된다 
+  
+#  datasource:
+#    #메모리모드 test는 Main의 resources application.yml이 아니라 test내의 resources 파일 안에있는 application.yml이 우선권을 가진다
+#    #메모리모드 이기떄문에 db가 꺼져있어도 test는 문제없이 실행이 잘 된다
+#    url: jdbc:h2:mem:test
+#    username: sa
+#    password: 1234
+#    driver-class-name: org.h2.Driver
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    properties:
+#      hibernate:
+#          #Systemout에 출력
+#        show_sql: true
+#        format_sql: true
+
+#로그를통해서 출력
+logging:
+  level:
+    org.hibernate.SQL : debug
+    #로그 파라미터를 찍어준다
+    org.hibernate.type: trace

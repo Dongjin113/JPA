@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="hello">
+        <properties>
+            <!-- 필수 속성 -->
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value="1234"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/./test;MODE=LEGACY"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <!-- <property name="hibernate.dialect" value="hellojpa.Section10JPQLBasicGrammar.JPQLBasicFunction.dialect.MyH2Dialect"/>-->
+
+                        <!-- 옵션 -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <property name="hibernate.jdbc.batch_size" value="10"/>
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+            <property name="hibernate.default_batch_fetch_size" value="100"/>
+            <!--
+            데이터베이스 스키마 자동 생성 - 속성
+            hibernate.hbm2ddl.auto
+            create = 기존 테이블 삭제 후 다시 생성(DROP + CREATE)
+            create-drop =  create와 같으나 종료시점에 테이블 DROP
+            update = 변경분만 반영(운영DB에는 사용하면 안됨)
+            validate = 엔티티와 테이블이 정상 매핑되었는지만 확인
+            none = 사용하지 않음
+            -->
+        </properties>
+    </persistence-unit>
+</persistence>

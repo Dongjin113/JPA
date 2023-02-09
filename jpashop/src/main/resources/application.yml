@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/./jpashop
+    username: sa
+    password: 1234
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+          #Systemout에 출력
+        show_sql: true
+        format_sql: true
+        default_batch_fetch_size: 100
+
+#로그를통해서 출력
+logging:
+  level:
+    org.hibernate.SQL : debug
+    #로그 파라미터를 찍어준다
+#    org.hibernate.type: trace
+
+
+server:
+  port: 8088
+
